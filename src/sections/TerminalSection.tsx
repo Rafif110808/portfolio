@@ -43,7 +43,7 @@ const banner = [
   "",
   "  ╔══════════════════════════════════════╗",
   "  ║                                      ║",
-  `  ║     ${personal.name.toUpperCase()} - Backend Developer     ║`,
+  `  ║     ${personal.name.toUpperCase()} - Frontend Developer    ║`,
   "  ║                                      ║",
   "  ╚══════════════════════════════════════╝",
   "",
@@ -89,9 +89,15 @@ export default function TerminalSection() {
     setLines((prev) => [...prev, { element: el, key: k }]);
   }, []);
 
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [lines]);
+ const isFirstRender = useRef(true);
+
+ useEffect(() => {
+   if (isFirstRender.current) {
+     isFirstRender.current = false;
+     return;
+   }
+   bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+ }, [lines]);
 
   useEffect(() => {
     const t = setTimeout(
@@ -321,7 +327,6 @@ export default function TerminalSection() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={onKey}
-                  autoFocus
                   className="w-full bg-transparent text-zinc-200 outline-none caret-transparent"
                   spellCheck={false}
                   autoComplete="off"

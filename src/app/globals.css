@@ -12,9 +12,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 body {
   background: var(--background);
@@ -56,4 +54,18 @@ body {
 .scrollbar-thin {
   scrollbar-width: thin;
   scrollbar-color: #424242 #1e1e1e;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }

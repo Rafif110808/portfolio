@@ -2,16 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { personal } from "@/data/portfolio";
-
-const links = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Terminal", href: "#terminal" },
-  { label: "Contact", href: "#contact" },
-];
+import { personal, navLinks } from "@/data/portfolio";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -27,7 +18,7 @@ export default function Navbar() {
         </a>
 
         <nav className="hidden items-center gap-6 text-sm text-zinc-400 md:flex">
-          {links.map((l) => (
+          {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -58,7 +49,7 @@ export default function Navbar() {
             className="overflow-hidden border-t border-zinc-800 bg-zinc-950"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
-              {links.map((l) => (
+              {navLinks.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}

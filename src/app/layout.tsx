@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rafif | Backend Developer",
+  title: "Rafif | Frontend Developer",
   description:
-    "Backend developer specializing in Laravel, CodeIgniter 4, PostgreSQL, and Node.js. Building reliable backend systems and modern web applications.",
+    "Frontend developer specializing in React, Next.js, and modern web technologies. Creating engaging frontend experiences and interactive web applications.",
 };
 
 export default function RootLayout({

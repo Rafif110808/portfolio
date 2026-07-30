@@ -1,16 +1,20 @@
 export interface Project {
-  id: string;
+  slug: string;
   title: string;
   description: string;
   tech: string[];
-  image?: string;
-  github?: string;
-  demo?: string;
+  images: string[];
+  overview: string;
+  features: string[];
+  challenges: string;
+  futureImprovements: string;
+  liveUrl?: string;
+  sourceUrl?: string;
 }
 
 export interface Skill {
   name: string;
-  category: "frontend" | "backend" | "database" | "tools";
+  category: "backend" | "frontend" | "database" | "tools";
   level: number;
   icon: string;
 }
