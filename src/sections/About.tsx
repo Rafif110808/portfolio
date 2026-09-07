@@ -12,7 +12,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="border-t border-zinc-800 bg-zinc-950 py-24">
+    <section id="about" className="border-t border-border-subtle bg-background py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader title="About Me" subtitle="Who I am and what I do" />
 
@@ -23,10 +23,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-base leading-8 text-zinc-400">
+            <p className="text-base leading-8 text-foreground/60">
               {personal.description}
             </p>
-            <p className="mt-4 text-sm text-zinc-600">
+            <p className="mt-4 text-sm text-foreground/50">
               Currently{" "}
               {personal.available
                 ? "looking for internship opportunities."
@@ -44,10 +44,10 @@ export default function About() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-5 text-center"
+                className="rounded-lg border border-border-subtle bg-surface p-5 text-center"
               >
-                <p className="text-2xl font-bold text-blue-400">{s.value}</p>
-                <p className="mt-1 text-xs text-zinc-500">{s.label}</p>
+                <p className="text-2xl font-bold text-accent">{s.value}</p>
+                <p className="mt-1 text-xs text-foreground/60">{s.label}</p>
               </div>
             ))}
           </motion.div>

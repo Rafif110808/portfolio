@@ -17,7 +17,7 @@ export default function ProjectGallery({ images, title }: Props) {
   const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
 
   return (
-    <div className="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+    <div className="relative overflow-hidden rounded-xl border border-border-subtle bg-surface">
       <div className="relative aspect-video w-full">
         <AnimatePresence mode="wait">
           <motion.img
@@ -36,7 +36,7 @@ export default function ProjectGallery({ images, title }: Props) {
           <>
             <button
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-zinc-700 bg-zinc-900/80 p-2 text-zinc-400 backdrop-blur transition-colors hover:bg-zinc-800 hover:text-white"
+              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-border-subtle bg-surface/80 p-2 text-foreground/60 backdrop-blur transition-colors hover:bg-surface hover:text-foreground"
               aria-label="Previous image"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,7 +45,7 @@ export default function ProjectGallery({ images, title }: Props) {
             </button>
             <button
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-zinc-700 bg-zinc-900/80 p-2 text-zinc-400 backdrop-blur transition-colors hover:bg-zinc-800 hover:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-border-subtle bg-surface/80 p-2 text-foreground/60 backdrop-blur transition-colors hover:bg-surface hover:text-foreground"
               aria-label="Next image"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,13 +57,13 @@ export default function ProjectGallery({ images, title }: Props) {
       </div>
 
       {images.length > 1 && (
-        <div className="flex items-center justify-center gap-2 border-t border-zinc-800 px-4 py-3">
+        <div className="flex items-center justify-center gap-2 border-t border-border-subtle bg-surface px-4 py-3">
           {images.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               className={`h-2 rounded-full transition-all ${
-                i === current ? "w-6 bg-blue-500" : "w-2 bg-zinc-600 hover:bg-zinc-500"
+                i === current ? "w-6 bg-accent" : "w-2 bg-border-subtle hover:bg-foreground/20"
               }`}
               aria-label={`Go to image ${i + 1}`}
             />

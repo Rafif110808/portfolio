@@ -8,7 +8,7 @@ const glitchText = "404";
 
 export default function NotFound() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-zinc-950 px-6">
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background px-6">
       {/* Subtle grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -19,7 +19,7 @@ export default function NotFound() {
       />
 
       {/* Soft glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[180px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[180px]" />
 
       <div className="relative z-10 text-center">
         <motion.div
@@ -28,7 +28,7 @@ export default function NotFound() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative"
         >
-          <span className="text-[8rem] font-black leading-none tracking-tighter text-white md:text-[12rem]">
+          <span className="text-[8rem] font-black leading-none tracking-tighter text-foreground md:text-[12rem]">
             {glitchText.split("").map((char, i) => (
               <motion.span
                 key={i}
@@ -48,7 +48,7 @@ export default function NotFound() {
               </motion.span>
             ))}
           </span>
-          <div className="pointer-events-none absolute inset-0 select-none text-[8rem] font-black leading-none tracking-tighter text-blue-500/20 blur-sm md:text-[12rem]">
+          <div className="pointer-events-none absolute inset-0 select-none text-[8rem] font-black leading-none tracking-tighter text-accent/20 blur-sm md:text-[12rem]">
             404
           </div>
         </motion.div>
@@ -59,12 +59,12 @@ export default function NotFound() {
           transition={{ delay: 0.3 }}
         >
           <motion.div
-            className="mt-2 font-mono text-sm text-zinc-600"
+            className="mt-2 font-mono text-sm text-foreground/50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <span className="text-zinc-500">$ </span>
+            <span className="text-foreground/60">$ </span>
             <span className="text-red-400">page not found</span>
           </motion.div>
         </motion.div>
@@ -73,7 +73,7 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mx-auto mt-6 max-w-md text-base leading-7 text-zinc-500"
+          className="mx-auto mt-6 max-w-md text-base leading-7 text-foreground/60"
         >
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </motion.p>
@@ -86,7 +86,7 @@ export default function NotFound() {
         >
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-500"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-all hover:bg-accent/90"
           >
             <svg
               className="h-4 w-4"
@@ -110,7 +110,7 @@ export default function NotFound() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-6 text-xs text-zinc-700"
+        className="absolute bottom-6 text-xs text-foreground/40"
       >
         &copy; {new Date().getFullYear()} {personal.name}
       </motion.div>

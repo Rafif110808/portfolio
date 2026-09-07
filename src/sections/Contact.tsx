@@ -12,7 +12,7 @@ const linkIcons: Record<string, string> = {
 
 export default function Contact() {
   return (
-    <section id="contact" className="border-t border-zinc-800 bg-zinc-950 py-24">
+    <section id="contact" className="border-t border-border-subtle bg-background py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader title="Contact" subtitle="Let&apos;s work together" />
 
@@ -23,7 +23,7 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="max-w-xl"
         >
-          <p className="text-base text-zinc-400">
+          <p className="text-base text-foreground/60">
             I&apos;m currently looking for internship opportunities. Feel free
             to reach out!
           </p>
@@ -35,7 +35,7 @@ export default function Contact() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/50 px-5 py-3 text-sm text-zinc-400 transition-all hover:-translate-y-0.5 hover:border-zinc-700 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-lg border border-border-subtle bg-surface px-5 py-3 text-sm text-foreground/60 transition-all hover:-translate-y-0.5 hover:border-foreground/10 hover:text-foreground"
               >
                 <span>{linkIcons[link.icon] || "🔗"}</span>
                 {link.name}
@@ -43,11 +43,11 @@ export default function Contact() {
             ))}
           </div>
 
-          <p className="mt-6 text-sm text-zinc-600">
+          <p className="mt-6 text-sm text-foreground/50">
             or send an email to{" "}
             <a
               href={`mailto:${personal.email}`}
-              className="text-blue-400 underline underline-offset-4 transition-colors hover:text-cyan-400"
+              className="text-accent underline underline-offset-4 transition-colors hover:text-accent/80"
             >
               {personal.email}
             </a>

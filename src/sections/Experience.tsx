@@ -6,12 +6,12 @@ import { experiences } from "@/data/portfolio";
 
 export default function Experience() {
   return (
-    <section id="experience" className="border-t border-zinc-800 bg-zinc-900/50 py-24">
+    <section id="experience" className="border-t border-border-subtle bg-surface py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader title="Experience" subtitle="My journey so far" />
 
         <div className="relative">
-          <div className="absolute left-[7px] top-0 h-full w-px bg-zinc-800 max-md:hidden" />
+          <div className="absolute left-[7px] top-0 h-full w-px bg-border-subtle max-md:hidden" />
 
           <div className="space-y-10">
             {experiences.map((exp, idx) => (
@@ -23,20 +23,20 @@ export default function Experience() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="relative pl-0 md:pl-8"
               >
-                <div className="absolute left-0 top-2 hidden h-3 w-3 rounded-full border-2 border-blue-500 bg-zinc-900 md:block" />
+                <div className="absolute left-0 top-2 hidden h-3 w-3 rounded-full border-2 border-accent bg-background md:block" />
 
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-5">
+                <div className="rounded-lg border border-border-subtle bg-background p-5">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <h3 className="font-semibold text-zinc-100">
+                      <h3 className="font-semibold text-foreground">
                         {exp.role}
                       </h3>
-                      <p className="text-sm text-blue-400">{exp.company}</p>
+                      <p className="text-sm text-accent">{exp.company}</p>
                     </div>
-                    <span className="text-xs text-zinc-600">{exp.period}</span>
+                    <span className="text-xs text-foreground/50">{exp.period}</span>
                   </div>
 
-                  <p className="mt-3 text-sm leading-6 text-zinc-500">
+                  <p className="mt-3 text-sm leading-6 text-foreground/60">
                     {exp.description}
                   </p>
 
@@ -44,7 +44,7 @@ export default function Experience() {
                     {exp.tech.map((t) => (
                       <span
                         key={t}
-                        className="rounded bg-zinc-800 px-2 py-0.5 text-xs text-zinc-500"
+                        className="rounded bg-surface border border-border-subtle px-2 py-0.5 text-xs text-foreground/60"
                       >
                         {t}
                       </span>
